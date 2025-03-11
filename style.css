@@ -1,0 +1,602 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: white;
+    margin: 0;
+    padding-top: 80px;
+    width: 100%; /* Ensure the width doesn't exceed the viewport */
+    overflow-x: hidden;
+}
+
+
+
+/* Sticky Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px;
+    overflow: hidden;
+    background: black;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1DBF73;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logout-button{
+    margin-left: 20px;
+    border: 1px white solid;
+    border-radius: 5px;
+    padding: 5px;
+
+
+}
+
+/*logout button*/
+.logout-button a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    text-align: right;
+
+}
+.logout-button a:hover{
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: bold;
+
+}
+
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #222;
+    border-radius: 30px;
+    padding: 2px;
+    margin-left: 40px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 8px;
+    width: 280px;
+    outline: none;
+}
+
+.search-bar button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding:6px;
+    color: white;
+    font-size: 18px;
+}
+
+/* Make the search icon change color when hovered */
+.search-bar button:hover {
+    color: rgb(64, 64, 64); /* Green color like Netflix */
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 70vh;
+    background: url('https://via.placeholder.com/1280x720') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info {
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px; 
+    font-weight: bold
+    
+    
+}
+ .info span {
+    margin-right: 10px; /* Adds spacing between elements */
+}
+.badge {
+    background: rgb(73, 75, 135);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.trending-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.trending-scroll {
+    display: flex;
+    gap: 15px;
+}
+
+.trending-scroll img {
+    width: 250px;
+    border-radius: 5px;
+    height: 230px
+}
+
+
+/* Movie Grid */
+.movie-grid {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+
+/* Movie Grid Container */
+.grid, #related-movies, #search-results{
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Space between movies */
+    padding: 0 15px;
+    max-width: 1400px; /* Optional: Limits max width */
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+/* Movie Card */
+.movie-card {
+    background-color: #181818;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    text-align: center; /* Centers the title */
+    width: calc(25% - 15px); /* Default 4 items per row */
+    padding: 10px;
+}
+
+/* Movie Poster */
+.movie-card img {
+    width: 100%;
+    height: 230px; /* Fixed height to keep all images uniform */
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Movie Grid Container */
+.grid, #related-movies, #search-results{
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: center; /* Center the items horizontally */
+    gap: 15px; /* Space between movies */
+    width: 100%; /* Use full width of the container */
+    transform-origin: center;
+    transform: scale(0.9);
+}
+
+/* Movie Card */
+.movie-card {
+    background-color: #181818;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    width: calc(25% - 15px); /* Default 4 items per row */
+    text-align: center; /* Centers the title */
+}
+
+/* Movie Poster */
+.movie-card img {
+    width: 100%;
+    height: 230px; /* Fixed height to keep all images uniform */
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Movie Title */
+.movie-card h4 {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Hover Effect */
+.movie-card:hover {
+    transform: scale(1.05);
+}
+/* Button Styling */
+#random-button {
+    background-color: rgb(73, 75, 135);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#random-button:hover {
+    background-color: rgb(73, 75, 135);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    background: black;
+    padding: 5px;
+    list-style: none;
+    top: 100%; /* Position it directly below the parent */
+    left: 0;
+    min-width: 150px;
+    z-index: 9999; /* Bring the dropdown above other elements */
+}
+
+/* Show the dropdown when hovering */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 4px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Optionally add hover effect on menu items */
+.dropdown-menu li a:hover {
+    background-color: #444;
+}
+
+/* Ensuring the dropdown can overlay on top of the header */
+body, html {
+    position: relative; /* Ensures body is layered above anything else */
+    z-index: 1;
+}
+
+/* Ensure the nav doesn't constrain the dropdown */
+nav {
+    position: relative;
+    z-index: 2; /* Ensure the navigation bar itself has a lower z-index */
+}
+
+/* Prevent clipping issues caused by any parent element's overflow */
+nav, header, .dropdown {
+    overflow: visible; /* Ensure the dropdown can extend out of the header */
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    transition: background 0.5s ease-in-out;
+    color: white;
+}
+
+
+.hero {
+    position: relative;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease-in-out; /* Smooth fading effect */
+    opacity: 0;
+}
+
+.hero.new-background::after {
+    opacity: 1;
+}
+
+
+.hero-content {
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+/* Trending Movies */
+.trending {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.trending-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+}
+
+.trending-scroll img {
+    width: 200px;
+    border-radius: 5px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.trending-scroll img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+ /*General Movie Grid (Used for All Pages) */
+.movie-grid {
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Title above grid */
+    align-items: center;
+}
+
+/* Grid Layout (8 Movies Per Row) */
+#movie-list, #related-movies, .grid, #search-results {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(150px, 1fr)); /* 8 per row */
+    gap: 20px; /* Space between movies */
+    width: 100vw;
+    max-width: 1vh; /* Ensures content doesn't stretch too wide */
+}
+
+/* Movie Card */
+.movie-card {
+    background-color: #181818;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%; /* Uniform width */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Movie Poster */
+.movie-card img {
+    width: 100%;
+    height: 260px; /* Fixed height for uniform size */
+    border-radius: 8px;
+    object-fit: cover; /* Prevents stretching */
+    display: block;
+}
+
+/* Movie Title */
+.movie-card h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Watchlist Button */
+.watchlist-btn {
+    background-color: #1DBF73;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+/* Remove Button */
+.remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.remove-btn:hover {
+    background-color: darkred;
+}
+
+/* Transparent Header */
+header {
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+}
+/* Search Results Heading */
+
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between logo and text */
+}
+
+/* Logo Image */
+.logo img {
+    width: 70px; /* Adjust size as needed */
+    height: auto;
+    object-fit: contain; /* Ensures correct aspect ratio */
+}
+
+/* Logo Text */
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(195, 140, 21);
+}
+
+
+.hero {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    overflow-y: hidden; /* Prevents vertical scrolling */
+    transform-origin: left center;
+    transform: scale(0.93);
+    margin: 20px;
+
+}
+
+#featured-movies {
+    display: flex;
+    gap: 20px;
+    min-width: 100%;
+}
+
+.hero-movie-card {
+    width: 300px;
+    color: white;
+    padding:20px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.hero-movie-card h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.info {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+
+}
+
+.hero-badge {
+    background-color: red;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+/* scrollbar */
+.hero::-webkit-scrollbar {
+    height: 8px;
+}
+
+.hero::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.hero::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.trending-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.trending-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.trending-scroll::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*quiz styling*/
+
+/* Basic CSS to style the movie recommendations */
+#results-container {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*gap: 20px;*/
+    /*justify-content: center;*/
+    /*padding: 20px;*/
+    display: grid;
+    grid-template-columns: repeat(8, minmax(150px, 1fr)); /* 8 per row */
+    gap: 20px; /* Space between movies */
+    width: 100vw;
+    max-width: 1vh; /* Ensures content doesn't stretch too wide */
+}
+
+
+.quiz_movie img {
+    width: 100%;
+    border-radius: 10px;
+    height: 230px;
+}
+
+
