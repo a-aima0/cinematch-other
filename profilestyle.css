@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+
+.page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.profile {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px;
+    height: 100%;
+    padding: 20px;
+}
+
+.profile-pic-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.username, .email {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.change-password {
+    color: blue;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+
+.delete-account {
+    color: red;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+
+.watchlist-container {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.watchlist-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.watchlist-wrapper {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.watchlist {
+    display: flex;
+    gap: 15px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.watchlist-item {
+    flex-shrink: 0;
+    width: 180px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 10px;
+    scroll-snap-align: start;
+}
+
+.watchlist-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.watchlist-item:hover .watchlist-item-img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 40px;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: gray;
+    z-index: 10;
+    user-select: none;
+}
+
+.left-arrow {
+    left: 10px;
+    display: none;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.watchlist-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.watchlist-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.arrow:hover {
+    color: white;
+}
